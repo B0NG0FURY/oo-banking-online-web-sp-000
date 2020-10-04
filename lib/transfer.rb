@@ -16,5 +16,11 @@ class Transfer
       false
     end
   end
+  
+  def execute_transaction
+    if valid?
+      @sender.balance -= amount
+      @receiver.deposit(amount)
+  end
 
 end
